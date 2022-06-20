@@ -1,0 +1,45 @@
+<div class="container pb-home">
+    <div class="row">
+        <div class="col-6">
+            <pb-card [planCardHeading]="'Add entry to my phone book'">
+                <br />
+                <form [formGroup]="phoneBookForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" autocomplete="off" formControlName="name"
+                                                    placeholder="Enter Name" required="required">
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="text" class="form-control" autocomplete="off" formControlName="PhoneNumber" placeholder="Phone Number">
+                    </div>
+                    <br />
+                    <button type="button" (click)="addTophoneBook()"
+                     class="btn btn-pr">Submit</button>
+                </form>
+            </pb-card>
+        </div>
+        <div class="col-6">
+            <pb-card [planCardHeading]="'View phone book'">
+                <br />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let dataDetail of phoneBookData">
+                            <th scope="row">{{dataDetail.id}}</th>
+                            <td>{{dataDetail.name}}</td>
+                            <td>{{dataDetail.phoneNumber}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </pb-card>
+        </div>
+    </div>
+</div>
