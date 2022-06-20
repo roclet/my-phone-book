@@ -3,36 +3,19 @@
         <div class="bd-highlight">
             <div class="p-2 flex-grow-1 bd-highlight display-space-between width-100">
                 <div class="display-center width-50">
-                    <h4 class="header pt-2 ml-3 text-wrap">{{ headerTitle ? headerTitle : 'Book Phone application' }}</h4>
+                    <h4 class="header pt-2 ml-3 text-wrap">{{ headerTitle ? headerTitle : 'Book Phone application' }}
+                    </h4>
                 </div>
                 <div class="display-center margin-right-1 width-50">
                     <div class="display-center cursor-pointer" (click)="openNeedhelpPopup()" *ngIf="isHelpVisible">
-                        <!-- <mtn-icon name="life" #lifeIcon></mtn-icon> -->
                         <span class="help-text pl-2"> Help </span>
                     </div>
                     <div>
-                        <button
-                            *ngIf="showClosebutton"
-                            class="close-icon btn close shadow-none"
-                            (click)="close()"
-                        ></button>
+                        <button *ngIf="showClosebutton" class="close-icon btn close shadow-none"
+                            (click)="close()"></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">{{ headerTitle ? headerTitle : 'Book Phone application' }}</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-  </nav> -->
