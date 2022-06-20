@@ -16,12 +16,10 @@ export class AuthCustomerEffect {
         this.actions$.pipe(
             ofType(PhoneBookActionTypes.PHONE_BOOK),
             mergeMap((action: any) => {
-                console.log("### action.payload ###", action.payloa);
                 return this.phoneBookService.addPhone(action.payload).pipe(
                     map(response => {
-                        console.log("### SetPhoneBookSuccessAction ###", response);
                         this.store.dispatch(
-                            new  LoadPhoneBookInfoAction({})
+                            new LoadPhoneBookInfoAction({})
                         );
                         return new SetPhoneBookSuccessAction(response);
                     }),
@@ -37,7 +35,6 @@ export class AuthCustomerEffect {
             mergeMap((action: any) => {
                 return this.phoneBookService.getPhoneBook().pipe(
                     map(response => {
-                        console.log("getPhoneBookInfo !!!!!!!!", response); 
                         return new SetPhoneBookInfoActionSuccess(response);
                     }),
                     catchError(error => of(new SetPhoneBookInformationPageError(error)))

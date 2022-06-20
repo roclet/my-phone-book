@@ -5,7 +5,7 @@ import {  takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PhoneBookModel } from 'src/app/shared/model/phone.book.model';
 import { PhoneBookService } from 'src/app/shared/services/phone-bookservice';
-import { of, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { LoadPhoneBookInfoAction, SubmitPhoneBookAction } from 'src/app/state/actions/phone-book.action';
 import { getPhoneBookInfoSelector } from 'src/app/state/selector/phone-book.selector';
 
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe(payload => {
                 this.phoneBookData = payload;
-                console.log(this.phoneBookData, "response @@@@@@@@@@@@", payload);
+
             });
 
     }
@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     addTophoneBook(){
         this.phonemodel.name = this.phoneBookForm.value.name;
         this.phonemodel.phoneNumber = this.phoneBookForm.value.PhoneNumber;
-        console.log("XXXXXXXXXXX", this.phonemodel);
         this.store.dispatch(new SubmitPhoneBookAction(this.phonemodel));
     }
 
@@ -62,7 +61,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.phonemodel.phoneNumber = this.phoneBookForm.value.PhoneNumber;
         this.pbService.addPhoneBook(this.phonemodel)
         .subscribe((data) => {
-          const key = 'STATUS';
+          const key = data;
         });
     }
 
