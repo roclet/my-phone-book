@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private unsubscribe$ = new Subject();
     public ngDestroyed$ = new Subject();
     phoneBookData : any[]  = [];
+    value: Date;
 
     constructor(
         private store: Store<any>,

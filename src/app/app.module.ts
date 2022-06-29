@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from './shared/services/basic-auth.interceptor';
 import { PhoneBookService } from './shared/services/phone-bookservice';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CalendarModule} from 'primeng/calendar';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { PhoneBookService } from './shared/services/phone-bookservice';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    CalendarModule,
     StateManagementModule.forRoot(),
   ],
   exports: [
